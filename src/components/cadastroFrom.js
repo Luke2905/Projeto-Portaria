@@ -7,7 +7,7 @@ class FormTransportadoraEntrada extends React.Component{
 
     render(){
         return(
-            <di class="FormEntrada">
+            <div id="FormEntrada" class="FormEntrada">
                 <form method="POST">
                 <span class="close">x</span>
                 <h2> Entrada de Transportadoras</h2>
@@ -32,7 +32,7 @@ class FormTransportadoraEntrada extends React.Component{
 
                     <input id="enviar" type="submit"></input>
                 </form>
-            </di>
+            </div>
         )
     }
 }

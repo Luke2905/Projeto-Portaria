@@ -102,7 +102,7 @@ header{
   background-color: #ffffff;
   border: solid 1px #282c34;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  /*display: ;*/
+  /* display: none; */
   border-radius: 10px;
 }
 form{
