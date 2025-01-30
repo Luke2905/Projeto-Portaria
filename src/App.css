@@ -38,17 +38,6 @@
   }
 }
 
-.bodyConteudo{
-  max-width: 100%;
-  overflow: hidden;
-  justify-content: center;
-  min-height: 566px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  overflow: hidden;
-  box-sizing: border-box;
-}
 
 .navContainer{
   color: aliceblue;
@@ -64,6 +53,25 @@
 .navContainer a{
   color: antiquewhite;
   padding: 25px;
+}
+
+/*********************************** CSS Home ************************************/
+.bodyConteudo{
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  min-height: 495px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.bodyConteudo h2{
+  font-size: 40px;
+  margin: 10px;
+
+}
+.bodyConteudo a{
+  font-size: 30px;
+  margin: 10px;
 }
 .Homecard1{
   grid-column: 1/ span 2;
@@ -101,18 +109,39 @@ footer{
   justify-content: center;
   align-items: center;
 }
-
+.valores-container{
+  display: flex;
+  justify-content: space-around;
+  z-index: inherit ;
+  transform: translateY(50%);
+}
+.circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  box-shadow: 0 4px 8px 0 rgba(71, 33, 223, 0.2), 0 6px 20px 0 rgba(21, 18, 52, 0.326);
+}
+.icon{
+  width: 50px;
+  height: 50px;
+  margin: 15px;
+}
 /* ----------------------- CSS Formulário de Entrada -------------------------*/
 .FormEntrada{
   position: absolute;
   width: 80%;
   height: 500px;
   background-color: #ffffff;
-  border: solid 1px #282c34;
+  border: solid 1px #000000;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
-  display: table;
+  display: flex;
   transform: translate(10%, 5%);
+  z-index: 100;
 }
 form{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -145,6 +174,7 @@ form input{
   height: 50px;
   background-color: rgb(223, 70, 70);
   color: #ffffff;
+  transform: translate(60vh, 10vh);
 }
 h1{
   text-align: center;

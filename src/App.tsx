@@ -14,7 +14,8 @@ function App() {
 <div className="layout">
       <MenuNav />
     <header>
-      <h1>Portaria Amino Quimica</h1>
+      <h1>Portaria Amino Quimica</h1><br/>
+      <img class="icon" src="https://portal.brcondos.com.br/wp-content/uploads/icone_portaria_recepcao2.png"></img>
     </header>
     <main>
     <FormTransportadoraEntrada/>
