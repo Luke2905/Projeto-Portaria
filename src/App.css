@@ -53,7 +53,7 @@ header {
   width: 100%;
   overflow: hidden;
   justify-content: center;
-  min-height: 582px;
+  min-height: 652px;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -128,7 +128,7 @@ footer{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
   display: flex;
-  transform: translate(12%, 20%);
+  transform: translate(12%, 12%);
   z-index: 100;
 }
 form{

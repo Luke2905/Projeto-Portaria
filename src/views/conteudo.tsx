@@ -4,18 +4,17 @@ import FormTransportadoraEntrada from "../components/cadastroFrom.tsx";
 import '../App.css'
 
 const user = {nome: "Lucas"};
-class Conteudo extends React.Component{
 
-    render(){
+const Conteudo =() =>{
         return(
             <div class="bodyConteudo">
                  <header>
                 <h1>Portaria Amino Quimica</h1><br/>
                 <img class="icon" src="https://portal.brcondos.com.br/wp-content/uploads/icone_portaria_recepcao2.png"></img>
                 </header>
+                <FormTransportadoraEntrada/>
                 <h2>Seja bem vindo(a),</h2>
                 <a>{user.nome}</a>
-
                 <div className="valores-container">
                     <div class="circle">
                     <i class="fas fa-book"></i>
@@ -24,9 +23,7 @@ class Conteudo extends React.Component{
                 </div>
             </div>
         )
-    }
  
-
 }
 
 export default Conteudo;
