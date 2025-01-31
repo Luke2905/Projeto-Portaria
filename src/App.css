@@ -95,7 +95,9 @@ footer{
   background-color: #002d45;
   display: flex;
   justify-content: center;
+  width: 100%;
   align-items: center;
+  position: absolute;
 }
 .valores-container{
   display: flex;
@@ -148,7 +150,7 @@ form input{
   border-radius: 10px;
   height: 30px;
 }
-#transportadora{
+#transportadora_input{
   width: 450px;
 }
 #motorista{
@@ -166,4 +168,70 @@ form input{
 }
 h1{
   text-align: center;
+}
+/*----------------------------Layout Transportadora List-------------------*/
+.TransportadorasBody{
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  max-height: 652px;
+  min-height: 652px;
+  overflow-y:scroll;
+  box-sizing: border-box;
+}
+/* .TransportadorasBody header{
+  justify-items: center;
+  min-height: 9vh;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  position: fixed;
+} */
+ .PatioBody{
+
+  min-height: 652px;
+
+ }
+/* .Transportadoras{
+  border:1px solid rgb(0, 0, 115);
+  border-radius:10px  10px 0 0;
+  min-width: 80%;
+} */
+
+.cardLista{
+  width: 95%;
+  height: 50px;
+  background-color: #aaa;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.ListaTransportadoras{
+  justify-content: center;
+}
+
+ /*-------------------------Painel Patio ----------------------------*/
+.loader {
+  position: relative;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  left: 45%;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
