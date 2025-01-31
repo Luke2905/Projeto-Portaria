@@ -7,6 +7,7 @@ import Botao from './components/button.tsx';
 import Abriform from './components/cadastroFrom.tsx';
 import FormTransportadoraEntrada from './components/cadastroFrom.tsx';
 import TransportadorasLista from './views/transportadorasList.tsx';
+import PainelPatio from './views/patioPainel.tsx';
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -20,7 +21,9 @@ export default function App() {
     <main>
       <Routes> {/*-> instancia as rotas no Main do App */}
         <Route  index element={<Conteudo/>}/>
+        <Route path='home' element={<Conteudo/>}/>
         <Route path='transportadoras' element={<TransportadorasLista/>}/> {/*Conteudo da pagina na rota */}
+        <Route path='patio' element={<PainelPatio/>}/>      
       </Routes>
     </main>
   
