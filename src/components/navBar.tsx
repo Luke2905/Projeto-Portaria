@@ -9,12 +9,12 @@ const MenuNav = () => {
 
         return(
             <>
-                <div class="navContainer">
-                <img width="60px" height="auto" className="img-responsive" src={amino_branco}  alt="amino_branco" />
+                <div className="navContainer">
+                <Link to="/"><img width="60px" height="auto" className="img-responsive" src={amino_branco}  alt="amino_branco" /></Link>
                 <nav>
-                    <Link /*-> Gera o link/mascara da rota no navegador*/to="/">Home</Link> 
+                    <Link /*-> Gera o link/mascara da rota no navegador*/to="/home">Home</Link> 
                     <Link to="/transportadoras">Transportadoras</Link>
-                    <a href="/js/">Pátio</a> |
+                    <Link to="/patio">Patio</Link>
                     <a href="/python/">Visitantes</a>
                 </nav>
             
