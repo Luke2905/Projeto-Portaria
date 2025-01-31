@@ -9,7 +9,7 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
                 <h2>Entrada de Transportadoras</h2>
 
                 <label>Transportadora</label>
-                <input id="transportadora" type="text" placeholder="Transportadora.." required />
+                <input id="transportadora_input" type="text" placeholder="Transportadora.." required />
 
                 <label>Motorista</label>
                 <input id="motorista" type="text" placeholder="Motorista..." required />
@@ -46,7 +46,7 @@ function Abriform() {
 
     return (
         <div>
-            <button class="ActionButton" id="cadTransportadora" onClick={() => setMostrarFormulario(true)}>
+            <button className="ActionButton" id="cadTransportadora" onClick={() => setMostrarFormulario(true)}>
                 Cadastrar Transportadora
             </button>
 
