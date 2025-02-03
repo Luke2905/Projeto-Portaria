@@ -47,7 +47,7 @@ function Abriform() {
     return (
         <div>
             <button className="ActionButton" id="cadTransportadora" onClick={() => setMostrarFormulario(true)}>
-                Cadastrar Transportadora
+                Entrada de Transportadora
             </button>
 
             {mostrarFormulario && <FormTransportadoraEntrada fecharFormulario={() => setMostrarFormulario(false)} />}
