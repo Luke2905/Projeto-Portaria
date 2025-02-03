@@ -16,9 +16,13 @@ const PainelPatio = () =>{
                 </h1>
             </header>  
             <div className="loader"></div>
-   
+
         </div>
     )
+
+    setTimeout(() => {
+        window.location.reload(); //-> Recarrega a pagina
+    }, 10000); //-> Tempo: 10 segundos
 }
 
 export default PainelPatio;
