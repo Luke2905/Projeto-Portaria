@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6ecc43a8.css",
+    "main.js": "/static/js/main.603b319d.js",
+    "static/media/amino_branco.png": "/static/media/amino_branco.6a690b64b9fcac335579.png",
+    "index.html": "/index.html",
+    "main.6ecc43a8.css.map": "/static/css/main.6ecc43a8.css.map",
+    "main.603b319d.js.map": "/static/js/main.603b319d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6ecc43a8.css",
+    "static/js/main.603b319d.js"
+  ]
+}
