@@ -1,41 +1,73 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import axios from "axios";
+import api from "../service/api.ts";
 import '../App.css';
 
 function FormTransportadoraEntrada({ fecharFormulario }) {
+
+
+
+    const inputNome = useRef(); // -> useRef: referencia um elemento e pega as informações dele
+    const inputMotorista = useRef();
+    const inputRG = useRef();
+    const inputAjudante = useRef();
+    const inputRgAjudante = useRef();
+    const inputPlaca = useRef();
+    const inputDtEnt = useRef();
+    const inputDtSai = useRef();
+    const inputEmpresa = useRef();
+    
+
+    async function createTransportadoras() { //-> Função para criar/enivar transportadora o backend
+        await api.post('/cad-transportadoras', {
+            
+                transportadora: inputNome.current.value,
+                motorista: inputMotorista.current.value,
+                rg_motorista: inputRG.current.value,
+                ajudante: inputAjudante.current.value,
+                rg_ajudante: inputRgAjudante.current.value,
+                placa: inputPlaca.current.value,
+                dth_entrada: inputDtEnt.current.value,
+                dth_saida: inputDtSai.current.value,
+                empresa: inputEmpresa.current.value
+            })
+    
+    }
+
     return (
         <div className="FormEntrada">
-            <form method="POST">
+            <form>
                 <span className="close" onClick={fecharFormulario}>x</span>
                 <h2>Entrada de Transportadoras</h2>
 
                 <label>Transportadora</label>
-                <input id="transportadora_input" type="text" placeholder="Transportadora.." required />
+                <input id="transportadora_input" type="text" placeholder="Transportadora.." required  ref={inputNome} /*-> Ref server para referenciar o elemento a ter os dados coletados*//>
 
                 <label>Motorista</label>
-                <input id="motorista" type="text" placeholder="Motorista..." required />
+                <input id="motorista" type="text" placeholder="Motorista..." required ref={inputMotorista}/>
 
                 <label>RG</label>
-                <input id="rg" type="text" placeholder="RG" required />
+                <input id="rg" type="text" placeholder="RG" required ref={inputRG} />
 
                 <label>Ajudante</label>
-                <input id="ajudante" type="text" placeholder="Ajudante..." />
+                <input id="ajudante" type="text" placeholder="Ajudante..."  ref={inputAjudante}/>
 
                 <label>RG Ajudante</label>
-                <input id="rg-ajudante" type="text" placeholder="RG" />
+                <input id="rg-ajudante" type="text" placeholder="RG" ref={inputRgAjudante}/>
 
                 <label>Placa</label>
-                <input id="placa" type="text" required placeholder="Placa" />
+                <input id="placa" type="text" required placeholder="Placa" ref={inputPlaca}/>
 
                 <label>Entrada</label>
-                <input id="entrada" type="datetime-local" required />
+                <input id="entrada" type="datetime-local" required ref={inputDtEnt}/>
 
                 <label>Saída</label>
-                <input id="saida" type="datetime-local" disabled />
+                <input id="saida" type="datetime-local" disabled ref={inputDtSai}/>
 
                 <label>Empresa</label>
-                <input id="empresa" type="text" required placeholder="Empresa..." /><br />
+                <input id="empresa" type="text" required placeholder="Empresa..."  ref={inputEmpresa}/><br />
 
-                <input id="enviar" type="submit" />
+                <input id="enviar" type="submit"  onClick={createTransportadoras} />
             </form>
         </div>
     );

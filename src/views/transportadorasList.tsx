@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { format, parseISO } from "date-fns";
 import ReactDOM from "react-dom/client";
 import App from '../App.tsx'
 import { table } from "console";
+import moment from "moment";
 import api from "../service/api.ts"; //-> importação da conexão com a API do backend
 
 
@@ -42,12 +44,12 @@ function Lista() {
 
   }, [])
 
-
   return(
-  
+
     <div className="ListaTransportadoras">
 
           {transportadora.map (transportadora => (  //-> função map: mapeia os componentes do array e exibe todos na tela
+
 
             <div className="cardLista" key={transportadora.id} /*-> Key é o componente unico para identificar cada card*/>
             <form action="" method="post">
@@ -58,10 +60,10 @@ function Lista() {
               <label htmlFor="">Placa</label>
               <input type="text" /*value={transportadora.rg_motorista}*/ disabled/>
               <label htmlFor="">Entrada</label>
-              <input type="text" value={transportadora.dth_entrada} disabled />
+              <input type="text" value={moment(transportadora.dth_entrada).format('DD/MM/YYYY HH:mm')} disabled/*-> moment é uma biblioteca para formatação de data, use junto com o format*/ /> 
               <label htmlFor="">Saida</label>
               <input type="datetime-local" />
-              <button id="btn-saida" type="submit">
+              <button id="btn-saida" type="submit" value={transportadora.id}>
                 Registrar Saida
               </button>
             </form>
