@@ -2,7 +2,9 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import api from "../service/api.ts";
 import '../App.css';
+import Conteudo from "../views/conteudo.tsx";
 
+/* eslint-disable */
 function FormTransportadoraEntrada({ fecharFormulario }) {
 
 
@@ -36,7 +38,7 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
 
     return (
         <div className="FormEntrada">
-            <form>
+            <form action={Conteudo}>
                 <span className="close" onClick={fecharFormulario}>x</span>
                 <h2>Entrada de Transportadoras</h2>
 
@@ -67,7 +69,7 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
                 <label>Empresa</label>
                 <input id="empresa" type="text" required placeholder="Empresa..."  ref={inputEmpresa}/><br />
 
-                <input id="enviar" type="submit"  onClick={createTransportadoras} />
+                <input id="enviar" type="submit"  onClick={createTransportadoras}  />
             </form>
         </div>
     );
