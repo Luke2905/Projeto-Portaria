@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { IMaskInput } from "react-imask"; //-> biblioteca de mascara de input
 import axios from "axios";
 import api from "../service/api.ts";
 import '../App.css';
@@ -35,7 +36,7 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
             })
     
     }
-
+    
     return (
         <div className="FormEntrada">
             <form action={Conteudo}>
@@ -49,13 +50,12 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
                 <input id="motorista" type="text" placeholder="Motorista..." required ref={inputMotorista}/>
 
                 <label>RG</label>
-                <input id="rg" type="text" placeholder="RG" required ref={inputRG} />
-
+                <IMaskInput mask={"00.000.000-00"} id="rg" type="text" placeholder="RG" required inputRef={inputRG} />
                 <label>Ajudante</label>
                 <input id="ajudante" type="text" placeholder="Ajudante..."  ref={inputAjudante}/>
 
                 <label>RG Ajudante</label>
-                <input id="rg-ajudante" type="text" placeholder="RG" ref={inputRgAjudante}/>
+                <IMaskInput mask={"00.000.000-00"} id="rg-ajudante" type="text" placeholder="RG" inputRef={inputRgAjudante}/>
 
                 <label>Placa</label>
                 <input id="placa" type="text" required placeholder="Placa" ref={inputPlaca}/>
