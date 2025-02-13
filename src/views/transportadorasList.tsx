@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { format, parseISO } from "date-fns";
 import ReactDOM from "react-dom/client";
 import App from '../App.tsx'
@@ -27,6 +27,7 @@ export default TransportadorasLista;
 function Lista() {  
 
   const [transportadora, setTransportadora] = useState([]) //-> useState é um hook ( funcionalidade do React) que vai modificar o "estado" de uma variavel exibida na tela
+  const [saidas, setSaidas] = useState({}); // Estado para armazenar as saídas digitadas
 
   let Transportadora = []
 
@@ -44,6 +45,28 @@ function Lista() {
 
   }, [])
 
+
+  const handleChange = (id, value) => { //-> captura o valor do inpute salva no state 
+    setSaidas((prev) => ({ ...prev, [id]: value }));
+  };
+
+  async function registrarSaida(id) {
+    const dataSaida = saidas[id];
+    if (!dataSaida) {
+      alert("Por favor, insira uma data de saída.");
+      return;
+    }
+
+    try {
+      await api.put(`/edit-transportadoras/${id}`, {
+        dth_saida: dataSaida,
+      });
+      alert("Saída registrada com sucesso!");
+    } catch (error) {
+      console.error("Erro ao registrar saída:", error);
+    }
+  }
+
   return(
 
     <div className="ListaTransportadoras">
@@ -52,7 +75,7 @@ function Lista() {
 
 
             <div className="cardLista" key={transportadora.id} /*-> Key é o componente unico para identificar cada card*/>
-            <form action="" method="post">
+            <form>
               <label htmlFor="">Transportadora</label>
               <input type="text" value={transportadora.transportadora} disabled/>
               <label htmlFor="">Motorista</label>
@@ -62,8 +85,8 @@ function Lista() {
               <label htmlFor="">Entrada</label>
               <input type="text" value={moment(transportadora.dth_entrada).format('DD/MM/YYYY HH:mm')} disabled/*-> moment é uma biblioteca para formatação de data, use junto com o format*/ /> 
               <label htmlFor="">Saida</label>
-              <input type="datetime-local" />
-              <button id="btn-saida" type="submit" value={transportadora.id}>
+              <input type="datetime-local" value={saidas[transportadora.id] || ""} onChange={(e) => handleChange(transportadora.id, e.target.value)} required/>
+              <button id="btn-saida" onClick={() => registrarSaida(transportadora.id)}>
                 Registrar Saida
               </button>
             </form>
