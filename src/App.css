@@ -53,7 +53,7 @@ header {
   width: 100%;
   overflow: hidden;
   justify-content: center;
-  min-height: 652px;
+  height: 85vh;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -174,8 +174,7 @@ h1{
   width: 100%;
   overflow: hidden;
   justify-content: center;
-  max-height: 652px;
-  min-height: 652px;
+  height: 85vh;
   overflow-y:scroll;
   box-sizing: border-box;
 }
@@ -189,11 +188,6 @@ h1{
   align-items: center;
   position: fixed;
 } */
- .PatioBody{
-
-  min-height: 652px;
-
- }
 /* .Transportadoras{
   border:1px solid rgb(0, 0, 115);
   border-radius:10px  10px 0 0;
@@ -225,7 +219,44 @@ h1{
   border: solid 1px #000000;
 }
  /*-------------------------Painel Patio ----------------------------*/
-.loader {
+.PatioBody{
+
+  height: 85vh;
+}
+.PatioCards{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  margin: 5px;
+}
+.Card_1{
+  background-color: #61dafb;
+  height: 300px;
+  grid-row: 1/ span 2;
+  grid-column: 1/ span 3;
+}
+.Card_2{
+  margin: 10px;
+  background-color: #d63333;
+  height: 200px;
+  grid-column: 1;
+  grid-row: 3;
+}
+.Card_3{
+  margin: 10px;
+  background-color: #d63333;
+  height: 200px;
+  grid-column: 2;
+  grid-row: 3;
+}
+.Card_4{
+  margin: 10px;
+  background-color: #d63333;
+  height: 200px;
+  grid-column: 3;
+  grid-row: 3;
+}
+ .loader {
   position: relative;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
