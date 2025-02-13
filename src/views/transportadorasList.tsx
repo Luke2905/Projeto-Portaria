@@ -8,6 +8,16 @@ import api from "../service/api.ts"; //-> importação da conexão com a API do 
 
 
 function TransportadorasLista(){
+  
+      //-> Recarrega a pagina a cada 30 Segundos
+      useEffect(() =>{
+          const RecarregaPagina = setTimeout(() => {
+              window.location.reload(); //-> Recarrega a pagina
+          }, 30000); //-> Tempo: 10 segundos
+  
+                  // Limpa o timeout caso o componente seja desmontado
+                  return () => clearTimeout(RecarregaPagina);
+          }, []);
 
   return(
     <div className="TransportadorasBody">
@@ -81,7 +91,7 @@ function Lista() {
               <label htmlFor="">Motorista</label>
               <input type="text" value={transportadora.motorista} disabled/>
               <label htmlFor="">Placa</label>
-              <input type="text" /*value={transportadora.rg_motorista}*/ disabled/>
+              <input type="text" value={transportadora.placa} disabled/>
               <label htmlFor="">Entrada</label>
               <input type="text" value={moment(transportadora.dth_entrada).format('DD/MM/YYYY HH:mm')} disabled/*-> moment é uma biblioteca para formatação de data, use junto com o format*/ /> 
               <label htmlFor="">Saida</label>
