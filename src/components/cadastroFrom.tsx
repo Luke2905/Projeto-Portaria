@@ -19,6 +19,7 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
     const inputDtEnt = useRef();
     const inputDtSai = useRef();
     const inputEmpresa = useRef();
+    const inputTipo = useRef();
     
 
     async function createTransportadoras() { //-> Função para criar/enivar transportadora o backend
@@ -32,7 +33,8 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
                 placa: inputPlaca.current.value,
                 dth_entrada: inputDtEnt.current.value,
                 dth_saida: inputDtSai.current.value,
-                empresa: inputEmpresa.current.value
+                empresa: inputEmpresa.current.value,
+                tipo: inputTipo.current.value
             })
     
     }
@@ -47,7 +49,7 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
                 <input id="transportadora_input" type="text" placeholder="Transportadora.." required  ref={inputNome} /*-> Ref server para referenciar o elemento a ter os dados coletados*//>
 
                 <label>Motorista</label>
-                <input id="motorista" type="text" placeholder="Motorista..." required ref={inputMotorista}/>
+                <input id="motorista" type="text" placeholder="Motorista..." required ref={inputMotorista}/><br />
 
                 <label>RG</label>
                 <IMaskInput mask={"00.000.000-00"} id="rg" type="text" placeholder="RG" required inputRef={inputRG} />
@@ -55,7 +57,7 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
                 <input id="ajudante" type="text" placeholder="Ajudante..."  ref={inputAjudante}/>
 
                 <label>RG Ajudante</label>
-                <IMaskInput mask={"00.000.000-00"} id="rg-ajudante" type="text" placeholder="RG" inputRef={inputRgAjudante}/>
+                <IMaskInput mask={"00.000.000-00"} id="rg-ajudante" type="text" placeholder="RG" inputRef={inputRgAjudante}/><br />
 
                 <label>Placa</label>
                 <input id="placa" type="text" required placeholder="Placa" ref={inputPlaca}/>
@@ -68,6 +70,13 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
 
                 <label>Empresa</label>
                 <input id="empresa" type="text" required placeholder="Empresa..."  ref={inputEmpresa}/><br />
+
+                <label>Tipo</label>
+                <select id="select" ref={inputTipo}>
+                    <option value={""}>Selecionar...</option>
+                    <option value={"Entrega"}>Entrega</option>
+                    <option value={"Coleta"}>Coleta</option>
+                </select>
 
                 <input id="enviar" type="submit"  onClick={createTransportadoras}  />
             </form>
