@@ -124,19 +124,22 @@ footer{
 .FormEntrada{
   position: absolute;
   width: 80%;
-  height: 500px;
+  height: 60vh;
   background-color: #ffffff;
   border: solid 1px #000000;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
-  display: flex;
   transform: translate(12%, 12%);
   z-index: 100;
+
 }
 form{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   margin: 10px;
   
+}
+.FormEntrada h2{
+  text-align: center;
 }
 .close {
   color: #aaa;
@@ -151,20 +154,39 @@ form input{
   height: 30px;
 }
 #transportadora_input{
-  width: 450px;
+  width: 30vw;
 }
 #motorista{
-  width: 450px;
+  width: 30vw;
+}
+#rg{
+  width: 14vw;
 }
 #ajudante{
-  width: 500px;
+  width: 30vw;
+}
+#rg-ajudante{
+  width: 14.5vw;
+}
+#placa{
+  width: 19vw;
 }
 #enviar{
+  justify-content: center;
+  align-items: center;
   width: 200px;
   height: 50px;
   background-color: rgb(223, 70, 70);
   color: #ffffff;
-  transform: translate(60vh, 10vh);
+ transform: translate(100%, 150%);
+}
+#select{
+
+    width: 15vw;
+    height: 30px;
+    border-radius: 10px;
+    margin: 10px;
+
 }
 h1{
   text-align: center;
@@ -195,12 +217,20 @@ h1{
 } */
 
 .cardLista{
-  width: 95%;
+  width: 95vw;
   min-height: 50px;
   background-color: #d7d7d7;
   margin: 0 15px 20px ;
   border-radius: 5px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Entrega {
+  background-color: #5bd072; /* Verde claro */
+}
+
+.Coleta {
+  background-color: #5bc4de; /* Vermelho claro */
 }
 
 .ListaTransportadoras{
@@ -220,42 +250,50 @@ h1{
 }
  /*-------------------------Painel Patio ----------------------------*/
 .PatioBody{
-
-  height: 85vh;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  max-height: 85vh;
+  box-sizing: border-box;
 }
 .PatioCards{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  display: flex;
   margin: 5px;
 }
-.Card_1{
-  background-color: #61dafb;
-  height: 300px;
-  grid-row: 1/ span 2;
-  grid-column: 1/ span 3;
-}
-.Card_2{
-  margin: 10px;
-  background-color: #d63333;
+.CardPatio{
+  background-color: #ecfbff;
   height: 200px;
-  grid-column: 1;
-  grid-row: 3;
+  margin: 5px;
 }
-.Card_3{
-  margin: 10px;
-  background-color: #d63333;
+
+.EntregaPatio {
+  background-color: #5bd072; /* Verde claro */
   height: 200px;
-  grid-column: 2;
-  grid-row: 3;
+  margin: 5px;
+  border-radius: 10px;
 }
-.Card_4{
-  margin: 10px;
-  background-color: #d63333;
+
+.ColetaPatio {
+  background-color: #5bc4de; /* Vermelho claro */
   height: 200px;
-  grid-column: 3;
-  grid-row: 3;
+  border-radius: 10px;
+  margin: 5px;
 }
+
+
+.CardPatio_1{
+  background-color: #003b4b;
+  width: 70%;
+  height: 500px;
+
+}
+.CardPatio_2{
+  text-align: center;
+  height: 500px;
+  width: 30%;
+  overflow-y: scroll;
+}
+
  .loader {
   position: relative;
   border: 16px solid #f3f3f3;
@@ -277,4 +315,63 @@ h1{
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 750px) {
+
+  .bodyConteudo{
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .FormEntrada{
+    position: absolute;
+    width: 80%;
+    height: 100vh;
+    background-color: #ffffff;
+    border: solid 1px #000000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    transform: translate(12%, -5%);
+    z-index: 100;
+
+  }
+  #transportadora_input{
+    width: 69vw;
+  }
+  #motorista{
+    width: 69vw;
+  }
+  #rg{
+    width: 69vw;
+  }
+  #ajudante{
+    width: 69vw;
+  }
+  #rg-ajudante{
+    width: 69vw;
+  }
+  #placa{
+    width: 69vw;
+  }
+  #enviar{
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(223, 70, 70);
+    color: #ffffff;
+   /* transform: translate(125%, 150%);*/
+  }
+  #select{
+  
+      width: 15vw;
+      height: 30px;
+      border-radius: 10px;
+      margin: 10px;
+  
+  }
 }

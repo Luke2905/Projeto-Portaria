@@ -38,6 +38,8 @@ function Lista() {
 
   const [transportadora, setTransportadora] = useState([]) //-> useState é um hook ( funcionalidade do React) que vai modificar o "estado" de uma variavel exibida na tela
   const [saidas, setSaidas] = useState({}); // Estado para armazenar as saídas digitadas
+  const [filtroTipo, setFiltroTipo] = useState('Todos'); // -> Estado para o Filtro
+
 
   let Transportadora = []
 
@@ -60,6 +62,12 @@ function Lista() {
     setSaidas((prev) => ({ ...prev, [id]: value }));
   };
 
+  // Const para filtrar os dados antes de renderizar
+  const transportadorasFiltradas = transportadora.filter(item => {
+    if (filtroTipo === 'Todos') return true;
+    return filtroTipo === 'Coleta' ? item.tipo === 'Coleta' : item.tipo === 'Entrega';
+  });
+
   async function registrarSaida(id) {
     const dataSaida = saidas[id];
     if (!dataSaida) {
@@ -78,13 +86,19 @@ function Lista() {
   }
 
   return(
+<>
+    <select onChange={(e) => setFiltroTipo(e.target.value)} value={filtroTipo}>
+      <option value="Todos">Todos</option>
+      <option value="Coleta">Coleta</option>
+      <option value="Entrega">Entrega</option>
+    </select>
 
     <div className="ListaTransportadoras">
 
-          {transportadora.map (transportadora => (  //-> função map: mapeia os componentes do array e exibe todos na tela
+        {transportadorasFiltradas.map (transportadora => (  //-> função map: mapeia os componentes do array e exibe todos na tela
 
 
-            <div className="cardLista" key={transportadora.id} /*-> Key é o componente unico para identificar cada card*/>
+            <div className={`cardLista ${transportadora.tipo == "Entrega" ? "Entrega" : "Coleta"}`} key={transportadora.id} /*-> Key é o componente unico para identificar cada card*/>
             <form>
               <label htmlFor="">Transportadora</label>
               <input type="text" value={transportadora.transportadora} disabled/>
@@ -105,6 +119,6 @@ function Lista() {
           ))},
     </div>
 
-
+</>
   )
 }
