@@ -4,6 +4,9 @@ import axios from "axios";
 import api from "../service/api.ts";
 import '../App.css';
 import Conteudo from "../views/conteudo.tsx";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 /* eslint-disable */
 function FormTransportadoraEntrada({ fecharFormulario }) {
@@ -38,7 +41,7 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
             })
     
     }
-    
+
     return (
         <div className="FormEntrada">
             <form action={Conteudo}>

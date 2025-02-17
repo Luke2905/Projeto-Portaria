@@ -253,7 +253,7 @@ h1{
   width: 100%;
   overflow: hidden;
   justify-content: center;
-  max-height: 85vh;
+  max-height: 72vh;
   box-sizing: border-box;
 }
 .PatioCards{
@@ -282,14 +282,30 @@ h1{
 
 
 .CardPatio_1{
-  background-color: #003b4b;
+  text-align: center;
+  background-color: #b7faf2;
   width: 70%;
-  height: 500px;
+  height: 68vh;
+  border-radius: 10px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
 
+.CardPatio_1 h3{
+  font-size: 40px;
+}
+
+.CardPatio_1 a{
+  font-size: 30px;
+}
+.CardPatio_1 label{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
 }
 .CardPatio_2{
   text-align: center;
-  height: 500px;
+  height: 68vh;
   width: 30%;
   overflow-y: scroll;
 }

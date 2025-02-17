@@ -9,16 +9,6 @@ import api from "../service/api.ts"; //-> importação da conexão com a API do 
 
 function TransportadorasLista(){
   
-      //-> Recarrega a pagina a cada 30 Segundos
-      useEffect(() =>{
-          const RecarregaPagina = setTimeout(() => {
-              window.location.reload(); //-> Recarrega a pagina
-          }, 30000); //-> Tempo: 10 segundos
-  
-                  // Limpa o timeout caso o componente seja desmontado
-                  return () => clearTimeout(RecarregaPagina);
-          }, []);
-
   return(
     <div className="TransportadorasBody">
       <header>

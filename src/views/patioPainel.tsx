@@ -13,7 +13,7 @@ function PainelPatio (){
       useEffect(() =>{
           const RecarregaPagina = setTimeout(() => {
               window.location.reload(); //-> Recarrega a pagina
-          }, 60000); //-> Tempo: 60 segundos
+          }, 30000); //-> Tempo: 60 segundos
   
                   // Limpa o timeout caso o componente seja desmontado
                   return () => clearTimeout(RecarregaPagina);
@@ -84,13 +84,14 @@ function PainelPatio (){
       <>
         {/* Card para a entrada mais antiga */}
         <div className="CardPatio_1">
-          <input type="text" value={transportadorasFiltradas[0].transportadora} disabled />
-          <label htmlFor="">Motorista</label>
-          <input type="text" value={transportadorasFiltradas[0].motorista} disabled />
-            <label htmlFor="">Entrada</label>
-            <input type="text" value={moment(transportadorasFiltradas[0].dth_entrada).format('DD/MM/YYYY HH:mm')} disabled/*-> moment é uma biblioteca para formatação de data, use junto com o format*/ /> 
-            <label >Tipo</label>
-            <input type="text" value={transportadorasFiltradas[0].tipo} disabled />
+          <h3>Transportadora</h3>
+          <a>{transportadorasFiltradas[0].transportadora}</a><br/>
+          <label htmlFor="">Motorista: </label>
+          <a>{transportadorasFiltradas[0].motorista}</a><br/>
+            <label htmlFor="">Entrada: </label>
+            <a>{moment(transportadorasFiltradas[0].dth_entrada).format('DD/MM/YYYY HH:mm')}</a><br/> 
+            <label >Tipo: </label>
+            <a>{transportadorasFiltradas[0].tipo}</a>
         </div>
 
         <div className="CardPatio_2">
@@ -98,7 +99,7 @@ function PainelPatio (){
         {transportadorasFiltradas.slice(1).map((transportadora, index) => ( // o slice(1) vai retornar todos os registro do array a partir da posição 1
           <div className={`cardPatio ${transportadora.tipo == "Entrega" ? "EntregaPatio" : "ColetaPatio"}`} key={index}>
             <h4>Transportadora</h4>
-            <a>{transportadora.transportadora} disabled</a><br />
+            <a>{transportadora.transportadora}</a><br />
             <label htmlFor="">Motorista: </label>
             <a>{transportadora.motorista} </a><br />
             <label htmlFor="">Entrada: </label>
