@@ -7,17 +7,17 @@ import moment from "moment";
 import api from "../service/api.ts"; //-> importação da conexão com a API do backend
 
 
-function PainelPatio (){
-  
-      //-> Recarrega a pagina a cada 30 Segundos
-      useEffect(() =>{
-          const RecarregaPagina = setTimeout(() => {
-              window.location.reload(); //-> Recarrega a pagina
-          }, 30000); //-> Tempo: 60 segundos
-  
-                  // Limpa o timeout caso o componente seja desmontado
-                  return () => clearTimeout(RecarregaPagina);
-          }, []);
+function PainelPatio() {
+
+  //-> Recarrega a pagina a cada 30 Segundos
+  useEffect(() => {
+    const RecarregaPagina = setTimeout(() => {
+      window.location.reload(); //-> Recarrega a pagina
+    }, 30000); //-> Tempo: 60 segundos
+
+    // Limpa o timeout caso o componente seja desmontado
+    return () => clearTimeout(RecarregaPagina);
+  }, []);
 
 
   const [transportadora, setTransportadora] = useState([]) //-> useState é um hook ( funcionalidade do React) que vai modificar o "estado" de uma variavel exibida na tela
@@ -28,14 +28,14 @@ function PainelPatio (){
   let Transportadora = []
 
   async function getTransportadoras() { //-> Função para acessar o backend
-    
-  const transportadorasApi = await api.get('/transportadoras')
-  
-  setTransportadora(transportadorasApi.data)   //-> seleciona apenas o campo data da requisiçao do backend
+
+    const transportadorasApi = await api.get('/transportadoras')
+
+    setTransportadora(transportadorasApi.data)   //-> seleciona apenas o campo data da requisiçao do backend
 
   }
 
-  useEffect(() =>{
+  useEffect(() => {
 
     getTransportadoras()
 
@@ -69,49 +69,51 @@ function PainelPatio (){
     }
   }
 
-  return(
+  return (
 
     <>
-    <h1> View do Patio</h1>
-  <select onChange={(e) => setFiltroTipo(e.target.value)} value={filtroTipo}>
-    <option value="Todos">Todos</option>
-    <option value="Coleta">Coleta</option>
-    <option value="Entrega">Entrega</option>
-  </select>
+      <div className="PatioBody">
+        <h1> View do Patio</h1>
+        <select onChange={(e) => setFiltroTipo(e.target.value)} value={filtroTipo}>
+          <option value="Todos">Todos</option>
+          <option value="Coleta">Coleta</option>
+          <option value="Entrega">Entrega</option>
+        </select>
 
-  <div className="PatioCards">
-    {transportadorasFiltradas.length > 0 && ( // -> legth > 0 pega o registro mais antigo
-      <>
-        {/* Card para a entrada mais antiga */}
-        <div className="CardPatio_1">
-          <h3>Transportadora</h3>
-          <a>{transportadorasFiltradas[0].transportadora}</a><br/>
-          <label htmlFor="">Motorista: </label>
-          <a>{transportadorasFiltradas[0].motorista}</a><br/>
-            <label htmlFor="">Entrada: </label>
-            <a>{moment(transportadorasFiltradas[0].dth_entrada).format('DD/MM/YYYY HH:mm')}</a><br/> 
-            <label >Tipo: </label>
-            <a>{transportadorasFiltradas[0].tipo}</a>
+        <div className="PatioCards">
+          {transportadorasFiltradas.length > 0 && ( // -> legth > 0 pega o registro mais antigo
+            <>
+              {/* Card para a entrada mais antiga */}
+              <div className="CardPatio_1">
+                <h3>Transportadora</h3>
+                <a>{transportadorasFiltradas[0].transportadora}</a><br />
+                <label htmlFor="">Motorista: </label>
+                <a>{transportadorasFiltradas[0].motorista}</a><br />
+                <label htmlFor="">Entrada: </label>
+                <a>{moment(transportadorasFiltradas[0].dth_entrada).format('DD/MM/YYYY HH:mm')}</a><br />
+                <label >Tipo: </label>
+                <a>{transportadorasFiltradas[0].tipo}</a>
+              </div>
+
+              <div className="CardPatio_2">
+                {/* Cards para as entradas subsequentes */}
+                {transportadorasFiltradas.slice(1).map((transportadora, index) => ( // o slice(1) vai retornar todos os registro do array a partir da posição 1
+                  <div className={`cardPatio ${transportadora.tipo == "Entrega" ? "EntregaPatio" : "ColetaPatio"}`} key={index}>
+                    <h4>Transportadora</h4>
+                    <a>{transportadora.transportadora}</a><br />
+                    <label htmlFor="">Motorista: </label>
+                    <a>{transportadora.motorista} </a><br />
+                    <label htmlFor="">Entrada: </label>
+                    <a>{moment(transportadora.dth_entrada).format('DD/MM/YYYY HH:mm')}</a>
+                  </div>
+                ))},
+
+              </div>
+            </>
+          )},
         </div>
-
-        <div className="CardPatio_2">
-        {/* Cards para as entradas subsequentes */}
-        {transportadorasFiltradas.slice(1).map((transportadora, index) => ( // o slice(1) vai retornar todos os registro do array a partir da posição 1
-          <div className={`cardPatio ${transportadora.tipo == "Entrega" ? "EntregaPatio" : "ColetaPatio"}`} key={index}>
-            <h4>Transportadora</h4>
-            <a>{transportadora.transportadora}</a><br />
-            <label htmlFor="">Motorista: </label>
-            <a>{transportadora.motorista} </a><br />
-            <label htmlFor="">Entrada: </label>
-            <a>{moment(transportadora.dth_entrada).format('DD/MM/YYYY HH:mm')}</a> 
-          </div>
-        ))},
-
-        </div>
-      </>
-    )},
-  </div>
-</>
+      </div>
+    </>
 
   )
 
