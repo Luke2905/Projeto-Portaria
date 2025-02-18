@@ -5,11 +5,13 @@ import Conteudo from './views/conteudo.tsx'
 import MenuNav from './components/navBar.tsx';
 import Botao from './components/button.tsx';
 import Abriform from './components/cadastroFrom.tsx';
+import Login from './views/login.tsx';
 import FormTransportadoraEntrada from './components/cadastroFrom.tsx';
 import TransportadorasLista from './views/transportadorasList.tsx';
 import PainelPatio from './views/patioPainel.tsx';
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from './service/authContext.js';
 
 
 
@@ -22,6 +24,7 @@ export default function App() {
       <Routes> {/*-> instancia as rotas no Main do App */}
         <Route  index element={<Conteudo/>}/>
         <Route path='home' element={<Conteudo/>}/>
+        <Route path='login' element={<Login/>}></Route>
         <Route path='transportadoras' element={<TransportadorasLista/>}/> {/*Conteudo da pagina na rota */}
         <Route path='patio' element={<PainelPatio/>}/>      
       </Routes>
