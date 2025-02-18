@@ -253,7 +253,7 @@ h1{
   width: 100%;
   overflow: hidden;
   justify-content: center;
-  max-height: 72vh;
+  height: 85.7vh;
   box-sizing: border-box;
 }
 .PatioCards{
@@ -322,6 +322,28 @@ h1{
   left: 45%;
 }
 
+
+/*---------------------- Login -------------------------*/
+.LoginBody{
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  height: 85.7vh;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+.LoginForm{
+  background-color: #002d45;
+  height: 50%;
+  border-radius: 10px;
+  color: #ecfbff;
+}
+.LoginForm label, input, button{
+  padding: 10px;
+  margin-left: 50px;
+}
 /* Safari */
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
