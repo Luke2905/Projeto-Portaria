@@ -154,7 +154,7 @@ form input{
   height: 30px;
 }
 #transportadora_input{
-  width: 30vw;
+  width: 25vw;
 }
 #motorista{
   width: 30vw;
@@ -163,13 +163,13 @@ form input{
   width: 14vw;
 }
 #ajudante{
-  width: 30vw;
+  width: 25vw;
 }
 #rg-ajudante{
   width: 14.5vw;
 }
 #placa{
-  width: 19vw;
+  width: 10vw;
 }
 #enviar{
   justify-content: center;
@@ -178,7 +178,7 @@ form input{
   height: 50px;
   background-color: rgb(223, 70, 70);
   color: #ffffff;
- transform: translate(100%, 150%);
+ transform: translate(100%, 50%);
 }
 #select{
 
@@ -238,7 +238,8 @@ h1{
 }
 
 .ListaTransportadoras input{
-  width: 155px;
+  font-size: 0.7rem;
+  width: 9vw;
   text-align: center;
 }
 #btn-saida{
@@ -247,6 +248,13 @@ h1{
   color: #f3f3f3;
   background-color: #d63333;
   border: solid 1px #000000;
+}
+.filtroTransp{
+  width: 12vw;
+  height: 5vh;
+  margin: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.332) ;
 }
  /*-------------------------Painel Patio ----------------------------*/
 .PatioBody{
@@ -285,8 +293,9 @@ h1{
   text-align: center;
   background-color: #b7faf2;
   width: 70%;
-  height: 68vh;
+  height: 59vh;
   border-radius: 10px;
+  margin: 10px;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -305,7 +314,7 @@ h1{
 }
 .CardPatio_2{
   text-align: center;
-  height: 68vh;
+  height: 59vh;
   width: 30%;
   overflow-y: scroll;
 }
@@ -342,7 +351,6 @@ h1{
 }
 .LoginForm label, input, button{
   padding: 10px;
-  margin-left: 50px;
 }
 /* Safari */
 @-webkit-keyframes spin {
