@@ -5,7 +5,7 @@ import App from '../App.tsx'
 import { table } from "console";
 import moment from "moment";
 import api from "../service/api.ts"; //-> importação da conexão com a API do backend
-
+import {motion} from 'framer-motion'; //-> biblioteca para animações
 
 function TransportadorasLista(){
   
@@ -77,7 +77,7 @@ function Lista() {
 
   return(
 <>
-    <select onChange={(e) => setFiltroTipo(e.target.value)} value={filtroTipo}>
+    <select className="filtroTransp" onChange={(e) => setFiltroTipo(e.target.value)} value={filtroTipo}>
       <option value="Todos">Todos</option>
       <option value="Coleta">Coleta</option>
       <option value="Entrega">Entrega</option>
@@ -85,28 +85,42 @@ function Lista() {
 
     <div className="ListaTransportadoras">
 
-        {transportadorasFiltradas.map (transportadora => (  //-> função map: mapeia os componentes do array e exibe todos na tela
 
+      {transportadorasFiltradas.map (transportadora => (  //-> função map: mapeia os componentes do array e exibe todos na tela
+      
+      <div>
+          <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+              duration: 1.5,
+              scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+           }}
+          >
+                       <div className={`cardLista ${transportadora.tipo == "Entrega" ? "Entrega" : "Coleta"}`} key={transportadora.id} /*-> Key é o componente unico para identificar cada card*/>
+        <form>
+          <label htmlFor="">Transportadora</label>
+          <input type="text" value={transportadora.transportadora} disabled/>
+          <label htmlFor="">Motorista</label>
+          <input type="text" value={transportadora.motorista} disabled/>
+          <label htmlFor="">Placa</label>
+          <input type="text" value={transportadora.placa} disabled/>
+          <label htmlFor="">Entrada</label>
+          <input type="text" value={moment(transportadora.dth_entrada).format('DD/MM/YYYY HH:mm')} disabled/*-> moment é uma biblioteca para formatação de data, use junto com o format*/ /> 
+          <label htmlFor="">Saida</label>
+          <input type="datetime-local" value={saidas[transportadora.id] || ""} onChange={(e) => handleChange(transportadora.id, e.target.value)} required/>
+          <button id="btn-saida" onClick={() => registrarSaida(transportadora.id)}>
+            Registrar Saida
+          </button>
+        </form>
+        </div>
+      </motion.div>
 
-            <div className={`cardLista ${transportadora.tipo == "Entrega" ? "Entrega" : "Coleta"}`} key={transportadora.id} /*-> Key é o componente unico para identificar cada card*/>
-            <form>
-              <label htmlFor="">Transportadora</label>
-              <input type="text" value={transportadora.transportadora} disabled/>
-              <label htmlFor="">Motorista</label>
-              <input type="text" value={transportadora.motorista} disabled/>
-              <label htmlFor="">Placa</label>
-              <input type="text" value={transportadora.placa} disabled/>
-              <label htmlFor="">Entrada</label>
-              <input type="text" value={moment(transportadora.dth_entrada).format('DD/MM/YYYY HH:mm')} disabled/*-> moment é uma biblioteca para formatação de data, use junto com o format*/ /> 
-              <label htmlFor="">Saida</label>
-              <input type="datetime-local" value={saidas[transportadora.id] || ""} onChange={(e) => handleChange(transportadora.id, e.target.value)} required/>
-              <button id="btn-saida" onClick={() => registrarSaida(transportadora.id)}>
-                Registrar Saida
-              </button>
-            </form>
-            </div>
+      </div>
+       
 
-          ))},
+        ))},
+
     </div>
 
 </>

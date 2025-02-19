@@ -5,7 +5,7 @@ import App from '../App.tsx'
 import { table } from "console";
 import moment from "moment";
 import api from "../service/api.ts"; //-> importação da conexão com a API do backend
-
+import { motion } from 'framer-motion';
 
 function PainelPatio() {
 
@@ -74,13 +74,24 @@ function PainelPatio() {
     <>
       <div className="PatioBody">
         <h1> View do Patio</h1>
-        <select onChange={(e) => setFiltroTipo(e.target.value)} value={filtroTipo}>
+        <select className="filtroTransp" onChange={(e) => setFiltroTipo(e.target.value)} value={filtroTipo}>
           <option value="Todos">Todos</option>
           <option value="Coleta">Coleta</option>
           <option value="Entrega">Entrega</option>
         </select>
 
-        <div className="PatioCards">
+
+        <motion.div
+
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+        }}
+        >
+                  <div className="PatioCards">
           {transportadorasFiltradas.length > 0 && ( // -> legth > 0 pega o registro mais antigo
             <>
               {/* Card para a entrada mais antiga */}
@@ -112,6 +123,7 @@ function PainelPatio() {
             </>
           )},
         </div>
+        </motion.div>
       </div>
     </>
 

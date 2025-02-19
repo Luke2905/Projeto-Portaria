@@ -6,6 +6,7 @@ import '../App.css';
 import Conteudo from "../views/conteudo.tsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {motion} from 'framer-motion'; //-> biblioteca para animações
 
 
 /* eslint-disable */
@@ -44,7 +45,12 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
 
     return (
         <div className="FormEntrada">
-            <form action={Conteudo}>
+            <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+                <form action={Conteudo}>
                 <span className="close" onClick={fecharFormulario}>x</span>
                 <h2>Entrada de Transportadoras</h2>
 
@@ -83,6 +89,7 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
 
                 <input id="enviar" type="submit"  onClick={createTransportadoras}  />
             </form>
+            </motion.div>
         </div>
     );
 }
