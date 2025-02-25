@@ -34,7 +34,10 @@ export default function App() {
   
   </BrowserRouter>
     <footer>
-      <p>© 2025 - Todos os Direitos Reservados Amino</p>
+      <p>
+        Desenvolvido por Lucas Laranjeira - © 2025 Todos os Direitos Reservados - 
+        <a href='https://www.amino.com.br/'> Amino</a>
+      </p>
     </footer>
   </div>
   );
