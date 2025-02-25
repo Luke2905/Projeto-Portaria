@@ -226,11 +226,13 @@ h1{
 }
 
 .Entrega {
-  background-color: #5bd072; /* Verde claro */
+  background-color: #5bd07223; /* Verde claro */
+  border: solid 4px #5bd072;;
 }
 
 .Coleta {
-  background-color: #5bc4de; /* Vermelho claro */
+  background-color: #5bc4de17; /* Azul claro */
+  border: solid 4px #5bc4de;;
 }
 
 .ListaTransportadoras{
@@ -363,6 +365,63 @@ h1{
   100% { transform: rotate(360deg); }
 }
 
+/* --------------------------------- View Relatório -----------------------------------*/
+.RelatorioBody{
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  height: 85.7vh;
+  box-sizing: border-box;
+}
+
+.Tabela{
+  border-collapse: collapse;
+  margin: 10px; 
+  width: 97vw; 
+  display: block; 
+  height: 65vh; 
+  overflow-y: auto;
+}
+
+.Tabela thead {
+	position: sticky; /* Faz o cabeçalho fixo */
+	top: 0;
+	background-color: #b9cae2; /* Fundo para diferenciar */
+	z-index: 1; /* Garante que o cabeçalho fique acima */
+}
+
+.Tabela th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.Tabela th{
+  padding: 8px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	width: 20vw;
+
+}
+
+.Tabela td{
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	width: 25vw;
+
+}
+
+
+tr:hover {
+	
+	background-color: #cbcbcba5;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+/*----------------------------------------- FIM -----------------------------------------*/
+/* ----------------------------------- Responsividade --------------------------------- */
 @media screen and (max-width: 750px) {
 
   .bodyConteudo{
