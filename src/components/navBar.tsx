@@ -15,7 +15,7 @@ const MenuNav = () => {
                     <Link /*-> Gera o link/mascara da rota no navegador*/to="/home">Home</Link> 
                     <Link to="/transportadoras">Transportadoras</Link>
                     <Link to="/patio">Patio</Link>
-                    <a href="/python/">Visitantes</a>
+                    <Link to="/relatorio">Relatório</Link>
                 </nav>
             
             </div>

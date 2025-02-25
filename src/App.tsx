@@ -12,6 +12,7 @@ import PainelPatio from './views/patioPainel.tsx';
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from './service/authContext.js';
+import RelatorioTransp from './views/relatorioTransportadora.tsx';
 
 
 
@@ -27,6 +28,7 @@ export default function App() {
         <Route path='login' element={<Login/>}></Route>
         <Route path='transportadoras' element={<TransportadorasLista/>}/> {/*Conteudo da pagina na rota */}
         <Route path='patio' element={<PainelPatio/>}/>      
+        <Route path='relatorio' element={<RelatorioTransp/>}/>      
       </Routes>
     </main>
   
