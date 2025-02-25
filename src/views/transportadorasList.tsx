@@ -6,6 +6,7 @@ import { table } from "console";
 import moment from "moment";
 import api from "../service/api.ts"; //-> importação da conexão com a API do backend
 import {motion} from 'framer-motion'; //-> biblioteca para animações
+import bootbox from 'bootbox';
 
 function TransportadorasLista(){
   
@@ -41,9 +42,28 @@ function Lista() {
 
   }
 
+  async function alertaTransportadora() {
+    try {
+      const transportadorasApi = await api.get('/novatransportadora');
+      
+      // Verifica se a resposta da API está ok
+      if (transportadorasApi.status === 200) {
+        alert(`Nova entrada de transportadora`);
+      } else {
+        console.log("Nenhuma entrada de transportadora");
+      }
+    } catch (error) {
+      console.log("Nenhuma entrada de transportadora");
+    }
+  }
+  
+
   useEffect(() =>{
 
     getTransportadoras()
+    const intervalo = setInterval(() => {
+      alertaTransportadora()
+    }, 15000);
 
   }, [])
 
@@ -77,6 +97,7 @@ function Lista() {
 
   return(
 <>
+
     <select className="filtroTransp" onChange={(e) => setFiltroTipo(e.target.value)} value={filtroTipo}>
       <option value="Todos">Todos</option>
       <option value="Coleta">Coleta</option>
