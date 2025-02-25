@@ -27,7 +27,7 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
     
 
     async function createTransportadoras() { //-> Função para criar/enivar transportadora o backend
-        await api.post('/cad-transportadoras', {
+     const NovaTransportadora = await api.post('/cad-transportadoras', {
             
                 transportadora: inputNome.current.value,
                 motorista: inputMotorista.current.value,
@@ -40,6 +40,13 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
                 empresa: inputEmpresa.current.value,
                 tipo: inputTipo.current.value
             })
+
+            if (!NovaTransportadora) {
+                console.log("Nenhuma nova transportadora foi cadastrada.");
+            } else {
+                alert(`Nova transportadora: ${NovaTransportadora.data.transportadora}`)
+                window.location.reload(); 
+            }
     
     }
 
