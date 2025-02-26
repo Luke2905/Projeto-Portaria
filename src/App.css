@@ -277,14 +277,16 @@ h1{
 }
 
 .EntregaPatio {
-  background-color: #5bd072; /* Verde claro */
+  background-color: #9cfbaf46; /* Verde claro */
+  border: solid 4px #5bd072;
   height: 200px;
   margin: 5px;
   border-radius: 10px;
 }
 
 .ColetaPatio {
-  background-color: #5bc4de; /* Vermelho claro */
+  background-color: #aaeeff36;
+  border: solid 4px #5bc4de;
   height: 200px;
   border-radius: 10px;
   margin: 5px;
@@ -293,7 +295,8 @@ h1{
 
 .CardPatio_1{
   text-align: center;
-  background-color: #b7faf2;
+  background-color: #b7faf25e;
+  border: solid 4px #b7faf2;
   width: 70%;
   height: 59vh;
   border-radius: 10px;
