@@ -20,8 +20,7 @@ const Conteudo =() =>{
                 <img className="icon" src="https://portal.brcondos.com.br/wp-content/uploads/icone_portaria_recepcao2.png"></img>
                 </header>
                 <FormTransportadoraEntrada/>
-                <h2>Seja bem vindo(a),</h2>
-                <a>{user.nome}</a>
+                <h2>Seja bem vindo(a)</h2>
                 <div className="valores-container">
                     <div className="circle">
                     <i className="fas fa-book"></i>

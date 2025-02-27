@@ -117,7 +117,7 @@ function PainelPatio() {
                     <label htmlFor="">Entrada: </label>
                     <a>{moment(transportadora.dth_entrada).format('DD/MM/YYYY HH:mm')}</a>
                   </div>
-                ))},
+                ))}
 
               </div>
             </>
