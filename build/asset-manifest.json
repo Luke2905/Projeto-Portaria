@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/portaria/static/css/main.4b6aee1a.css",
-    "main.js": "/portaria/static/js/main.82530014.js",
+    "main.css": "/portaria/static/css/main.621d9f6b.css",
+    "main.js": "/portaria/static/js/main.7ea01de8.js",
     "static/media/amino_branco.png": "/portaria/static/media/amino_branco.6a690b64b9fcac335579.png",
     "index.html": "/portaria/index.html",
-    "main.4b6aee1a.css.map": "/portaria/static/css/main.4b6aee1a.css.map",
-    "main.82530014.js.map": "/portaria/static/js/main.82530014.js.map"
+    "main.621d9f6b.css.map": "/portaria/static/css/main.621d9f6b.css.map",
+    "main.7ea01de8.js.map": "/portaria/static/js/main.7ea01de8.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b6aee1a.css",
-    "static/js/main.82530014.js"
+    "static/css/main.621d9f6b.css",
+    "static/js/main.7ea01de8.js"
   ]
 }

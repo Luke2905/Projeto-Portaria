@@ -106,12 +106,14 @@ footer{
   transform: translateY(50%);
 }
 .circle{
+  font-size:  0.75rem;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(255, 255, 255);
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 100%;
   box-shadow: 0 4px 8px 0 rgba(71, 33, 223, 0.2), 0 6px 20px 0 rgba(21, 18, 52, 0.326);
 }
@@ -424,6 +426,20 @@ tr:hover {
 }
 
 /*----------------------------------------- FIM -----------------------------------------*/
+/*----------------------------------------- Aletas --------------------------------------*/
+.Alerta{
+  position: absolute;
+  width: 50%;
+  height: 50vh;
+  background-color: #00ffb35d;
+  border: solid 1px #00ffb3;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  transform: translate(12%, 12%);
+  z-index: 100;
+
+}
+
 /* ----------------------------------- Responsividade --------------------------------- */
 @media screen and (max-width: 750px) {
 

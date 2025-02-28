@@ -22,9 +22,33 @@ const Conteudo =() =>{
                 <FormTransportadoraEntrada/>
                 <h2>Seja bem vindo(a)</h2>
                 <div className="valores-container">
+                    <motion.div
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.8 }}
+                        className="circle"
+                    >
+                        <i className="fas fa-book"></i>
+                        <span>Domínio do conhecimento</span>
+                    </motion.div>
                     <div className="circle">
                     <i className="fas fa-book"></i>
-                    <span>Domínio do conhecimento</span>
+                    <span>Orientação ao Cliente</span>
+                    </div>
+                    <div className="circle">
+                    <i className="fas fa-book"></i>
+                    <span>Verdade e transparência</span>
+                    </div>
+                    <div className="circle">
+                    <i className="fas fa-book"></i>
+                    <span>Disciplina e atenção aos detalhes</span>
+                    </div>
+                    <div className="circle">
+                    <i className="fas fa-book"></i>
+                    <span>Autonomia com colaboração</span>
+                    </div>
+                    <div className="circle">
+                    <i className="fas fa-book"></i>
+                    <span>Zelo</span>
                     </div>
                 </div>
 
