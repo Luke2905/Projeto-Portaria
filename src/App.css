@@ -255,6 +255,9 @@ h1{
   width: 9vw;
   text-align: center;
 }
+#obsrv{
+  width: 90vw;
+}
 #btn-saida{
   height: 35px;
   border-radius: 10px;

@@ -24,6 +24,7 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
     const inputDtSai = useRef();
     const inputEmpresa = useRef();
     const inputTipo = useRef();
+    const inputObservacao = useRef();
     
 
     async function createTransportadoras() { //-> Função para criar/enivar transportadora o backend
@@ -38,7 +39,8 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
                 dth_entrada: inputDtEnt.current.value,
                 dth_saida: inputDtSai.current.value,
                 empresa: inputEmpresa.current.value,
-                tipo: inputTipo.current.value
+                tipo: inputTipo.current.value,
+                observacao: inputObservacao.current.value
             })
 
             if (!NovaTransportadora) {
@@ -94,7 +96,7 @@ function FormTransportadoraEntrada({ fecharFormulario }) {
                     <option value={"Coleta"}>Coleta</option>
                 </select>
 
-                <input id="enviar" type="submit"  onClick={createTransportadoras}  />
+                <input id="enviar" type="submit"  onClick={createTransportadoras}  ref={inputObservacao}/>
             </form>
             </motion.div>
         </div>
