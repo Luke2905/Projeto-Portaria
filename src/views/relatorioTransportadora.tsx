@@ -105,6 +105,7 @@ function Tabela() {
                             <th>Saida</th>
                             <th>Empresa</th>
                             <th>Tipo</th>
+                            <th>Observação</th>
                         </thead>
                         <tbody>
  
@@ -118,6 +119,7 @@ function Tabela() {
                                 <td>{moment(transportadora.dth_saida).format('DD/MM/YYYY HH:mm')}</td>
                                 <td>{transportadora.empresa}</td>
                                 <td>{transportadora.tipo}</td>
+                                <td>{transportadora.observacao}</td>
                             </tr>
 
                             ))}
