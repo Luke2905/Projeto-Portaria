@@ -131,6 +131,18 @@ footer a{
   height: 50px;
   margin: 15px;
 }
+.Contatos{
+  position: absolute;
+  width: 80%;
+  height: 550;
+  background-color: #ffffff;
+  border: solid 1px #000000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  transform: translate(12%, -18%);
+  z-index: 100;
+
+}
 /* ----------------------- CSS Formulário de Entrada -------------------------*/
 .FormEntrada{
   position: absolute;
