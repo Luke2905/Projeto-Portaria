@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import '../App.css';
 import { motion } from 'framer-motion';
 import FormTransportadoraEntrada from "../components/cadastroFrom.tsx";
+import FormColaboradorEntrada from "../components/FormEntradaColaborador.tsx"
 
 const Conteudo = () => {
   const [mostrarContatos, setMostrarContatos] = useState(false);
@@ -29,7 +30,7 @@ const Conteudo = () => {
         {mostrarContatos && (
           <Contatos fecharContatos={() => setMostrarContatos(false)} />
         )}
-
+        <FormColaboradorEntrada/>
         <FormTransportadoraEntrada />
         <h2>Seja bem-vindo(a)</h2>
 
