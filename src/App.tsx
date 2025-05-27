@@ -7,6 +7,7 @@ import Abriform from './components/cadastroFrom.tsx';
 import Login from './views/login.tsx';
 import FormTransportadoraEntrada from './components/cadastroFrom.tsx';
 import TransportadorasLista from './views/transportadorasList.tsx';
+import ListaColaboradores from './views/colaboradores/colaboradoresView.tsx';
 import PainelPatio from './views/patioPainel.tsx';
 import ReactDOM from "react-dom/client";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
@@ -26,12 +27,13 @@ export default function App() {
             <Route path='transportadoras' element={<TransportadorasLista />} />
             <Route path='patio' element={<PainelPatio />} />
             <Route path='relatorio' element={<RelatorioTransp />} />
+            <Route path='colaboradores' element={<ListaColaboradores />} />
           </Routes>
         </main>
       </Router>
       <footer>
         <p>
-          Desenvolvido por Lucas Laranjeira - © 2025 Todos os Direitos Reservados -
+          Desenvolvido por TI Amino - © 2025 Todos os Direitos Reservados -
           <a href='https://www.amino.com.br/'> Amino</a>
         </p>
       </footer>
