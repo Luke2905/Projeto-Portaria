@@ -16,6 +16,7 @@ const MenuNav = () => {
                     <Link to="/transportadoras">Transportadoras</Link>
                     <Link to="/patio">Patio</Link>
                     <Link to="/relatorio">Relatório</Link>
+                    <Link to="/colaboradores">Colaboradores</Link>
                 </nav>
             
             </div>
