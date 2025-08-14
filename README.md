@@ -88,5 +88,5 @@ export default api;
 
 ---
 
-Desenvolvido com ❤️ por [Lucas Laranjeira]
+Desenvolvido por [Lucas Laranjeira]
 
